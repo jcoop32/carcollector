@@ -26,10 +26,11 @@ SECRET_KEY = 'django-insecure-3ulcfe0j-w*bwqs-3l)5magnc-xk@sggd-u*zr((!_y3bz&tbp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['peaceful-falls-62521-e14940728e8d.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['peaceful-falls-62521-e14940728e8d.herokuapp.com', 'localhost']
 
 
 # Application definition
+
 
 INSTALLED_APPS = [
     'main_app.apps.MainAppConfig',
