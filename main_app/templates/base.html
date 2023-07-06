@@ -14,27 +14,31 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <header class="navbar-fixed">
-      <nav>
+      <nav class="sidenav-trigger">
         <div class="nav-wrapper light-blue darken-2">
-          <ul>
-            <li>
-              <a href="{% url 'home' %}" class="left brand-logo"
-                >&nbsp;&nbsp;Car Collector</a
-              >
-            </li>
-          </ul>
-          <ul class="right">
+          <a href="{% url 'home' %}" class="left brand-logo hide-on-med-and-down">&nbsp;&nbsp;Car Collector</a>
+          <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'car_create' %}">Add Car</a></li>
             <li><a href="{% url 'cars' %}">View All My Cars</a></li>
           </ul>
+          <ul class="right show-on-medium-and-down hide-on-med-and-up">
+            <a href="{% url 'home' %}"><i class="material-icons">home</i></a>
+          </ul>
         </div>
       </nav>
     </header>
+    <ul class="sidenav" id="mobile">
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'car_create' %}">Add Car</a></li>
+      <li><a href="{% url 'cars' %}">View All My Cars</a></li>
+    </ul>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer class="page-footer light-blue">
       <div class="right">
@@ -42,5 +46,11 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(() => {
+          $('.sidenav').sidenav();
+        });
+    </script>
+    
   </body>
 </html>
