@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+<a href="{% url 'cars' %}">Back</a>
 <h3>{{ car.make }} {{ car.model }}</h3>
 <p>Year: {{ car.year }}</p>
 <p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
