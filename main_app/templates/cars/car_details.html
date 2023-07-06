@@ -1,8 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <a href="{% url 'cars' %}">Back</a>
-<h3>{{ car.make }} {{ car.model }}</h3>
-<p>Year: {{ car.year }}</p>
-<p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
-<p>Mileage: {{ car.milage }}</p>
+<h1>Details</h1>
+<div class="card">
+  <div class="card-content">
+    <h3>{{ car.make }} {{ car.model }}</h3>
+    <p>Year: {{ car.year }}</p>
+    <p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
+    <p>Mileage: {{ car.milage|floatformat:"-3g" }}</p>
+  </div>
+</div>
 
 {% endblock %}
