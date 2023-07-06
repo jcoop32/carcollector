@@ -12,4 +12,8 @@ def cars_list(request):
         'cars': Car.objects.all()
     })
  
+def car_details(request, car_id):
+    return render(request, 'cars/car_details.html', {
+        'car': Car.objects.get(id=car_id)
+    })
   
