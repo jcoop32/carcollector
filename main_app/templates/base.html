@@ -6,13 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Collector</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header class="navbar-fixed">
         <nav>
-          <div class="nav-wrapper">
+          <div class="nav-wrapper light-blue darken-2">
             <ul>
               <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Car Collector</a></li>
             </ul>
@@ -27,8 +28,9 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer light-blue">
         <div class="right">All Rights Reserved, &copy; 2023 Car Collector &nbsp;</div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
