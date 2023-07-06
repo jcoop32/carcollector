@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import CreateView, UpdateView, DeleteView
+
 from .models import Car
 # Create your views here.
 def home(request):
@@ -16,4 +18,6 @@ def car_details(request, car_id):
     return render(request, 'cars/car_details.html', {
         'car': Car.objects.get(id=car_id)
     })
-  
+class CarCreate(CreateView):
+    model = Car
+    fields = '__all__'
