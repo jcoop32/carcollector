@@ -28,7 +28,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['peaceful-falls-62521-e14940728e8d.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 
