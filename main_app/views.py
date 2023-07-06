@@ -21,3 +21,11 @@ def car_details(request, car_id):
 class CarCreate(CreateView):
     model = Car
     fields = '__all__'
+
+class CarUpdate(UpdateView):
+    model = Car
+    fields = '__all__'
+
+class CarDelete(DeleteView):
+    model = Car
+    success_url = '/cars'

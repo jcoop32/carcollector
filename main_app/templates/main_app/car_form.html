@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% block content %} {% if object %}
-<h1>Edit <span class="blue-text">{{ object.name }}</span></h1>
+{% extends 'base.html' %} {% block content %} 
+<h5><a href="{% url 'cars' %}">Back</a></h5>
+{% if object %}
+<h1>Edit <span class="blue-text">{{ object.make }}</span></h1>
 {% else %}
 <h1>Add Car</h1>
 {% endif %}

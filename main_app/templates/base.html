@@ -22,18 +22,21 @@
       <nav class="sidenav-trigger">
         <div class="nav-wrapper light-blue darken-2">
           <a href="{% url 'home' %}" class="left brand-logo hide-on-med-and-down">&nbsp;&nbsp;Car Collector</a>
+          <!-- hamburger menu for mobile, hidden when on larger width -->
           <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'car_create' %}">Add Car</a></li>
             <li><a href="{% url 'cars' %}">View All My Cars</a></li>
           </ul>
+          <!-- home btn for mobile -->
           <ul class="right show-on-medium-and-down hide-on-med-and-up">
             <a href="{% url 'home' %}"><i class="material-icons">home</i></a>
           </ul>
         </div>
       </nav>
     </header>
+    <!-- sidenav bar for mobile -->
     <ul class="sidenav" id="mobile">
       <li><a href="{% url 'about' %}">About</a></li>
       <li><a href="{% url 'car_create' %}">Add Car</a></li>
@@ -46,6 +49,7 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- jquery for sidenav -->
     <script>
         $(document).ready(() => {
           $('.sidenav').sidenav();
