@@ -7,7 +7,7 @@
     <h3>{{ car.make }} {{ car.model }}</h3>
     <p>Year: {{ car.year }}</p>
     <p>Color: <span style="font-weight: bold;">{{ car.color }}</span></p>
-    <p>Mileage: {{ car.milage|floatformat:"-3g" }}</p>
+    <p>Mileage: {{ car.mileage|floatformat:"-3g" }}</p>
   </div>
   <div class="card-action">
     <a href="{% url 'car_update' car.id %}">Edit</a>
