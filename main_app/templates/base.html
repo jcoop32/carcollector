@@ -27,6 +27,7 @@
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
+            <li><a href="{% url 'explore_list' %}">Explore Cars</a></li>
             <li><a href="{% url 'car_create' %}">Add Car</a></li>
             <li><a href="{% url 'cars' %}">View All My Cars</a></li>
             <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -47,6 +48,7 @@
     <ul class="sidenav" id="mobile">
       <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
+            <li><a href="{% url 'explore_list' %}">Explore Cars</a></li>
             <li><a href="{% url 'car_create' %}">Add Car</a></li>
             <li><a href="{% url 'cars' %}">View All My Cars</a></li>
             <li style="font-style: italic;" class="container right">Hello, {{ user.username }}</li>

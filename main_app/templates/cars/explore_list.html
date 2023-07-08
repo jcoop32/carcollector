@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Explore  Cars</h1>
+<div class="row">
+{% for car in cars %}
+<div class="col s6">
+<div class="card flow-text hoverable">
+    <div class="card-content">
+      <span class="card-title">{{ car.make }} {{ car.model }}</span>
+      <p>Year: {{ car.year }}</p>
+      <p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
+      <p>Mileage: {{ car.mileage|floatformat:"-3g" }}</p>
+      <p>Owned by: {{ car.user.username }}</p>
+    </div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

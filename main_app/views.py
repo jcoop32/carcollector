@@ -18,6 +18,15 @@ def cars_list(request):
     return render(request, 'cars/cars_list.html', {
         'cars': Car.objects.filter(user=request.user).order_by('id')
     })
+
+@login_required
+def explore_list(request):
+    return render(request, 'cars/explore_list.html', {
+        # removes logged in users cars from explore list
+        'cars': Car.objects.all().exclude(user=request.user),
+    })
+
+
 @login_required
 def car_details(request, car_id):
     return render(request, 'cars/car_details.html', {
@@ -26,6 +35,9 @@ def car_details(request, car_id):
 class CarCreate(LoginRequiredMixin, CreateView):
     model = Car
     fields = ['make', 'model', 'year', 'color', 'mileage']
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class CarUpdate(LoginRequiredMixin, UpdateView):
     model = Car
