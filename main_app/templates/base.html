@@ -26,8 +26,13 @@
           <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
             <li><a href="{% url 'car_create' %}">Add Car</a></li>
             <li><a href="{% url 'cars' %}">View All My Cars</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            <!-- <li><a href="{% url 'signup' %}">Sign Up</a></li> -->
+            {% endif %}
           </ul>
           <!-- home btn for mobile -->
           <ul class="right show-on-medium-and-down hide-on-med-and-up">
@@ -39,8 +44,13 @@
     <!-- sidenav bar for mobile -->
     <ul class="sidenav" id="mobile">
       <li><a href="{% url 'about' %}">About</a></li>
-      <li><a href="{% url 'car_create' %}">Add Car</a></li>
-      <li><a href="{% url 'cars' %}">View All My Cars</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'car_create' %}">Add Car</a></li>
+            <li><a href="{% url 'cars' %}">View All My Cars</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            <!-- <li><a href="{% url 'signup' %}">Sign Up</a></li> -->
+            {% endif %}
     </ul>
     <main class="container">{% block content %} {% endblock %}</main>
     <footer class="page-footer light-blue">
