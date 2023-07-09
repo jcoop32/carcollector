@@ -1,20 +1,13 @@
 {% extends 'base.html' %} {% block content %}
-<h1>My Cars</h1>
 {% for car in cars %}
+<h1>{{ car.user.username }}'s Cars</h1>
 <div class="card flow-text">
-  <a href="{% url 'details' car.id %}" class="black-text"
-    ><div class="card-content hoverable">
+    <div class="card-content hoverable">
       <span class="card-title">{{ car.make }} {{ car.model }}</span>
       <p>Year: {{ car.year }}</p>
       <p>Color: {{ car.color }}</p>
       <p>Mileage: {{ car.mileage|floatformat:"-3g" }}</p>
-    </div></a
-  >
+    </div>
 </div>
 {% endfor %}
-<a
-  class="btn-floating btn-large waves-effect waves-light grey darken-1"
-  href="{% url 'car_create' %}"
-  ><i class="material-icons">add</i></a
->
 {% endblock %}

@@ -1,15 +1,17 @@
 {% extends 'base.html' %} 
 {% block content %}
-<div class="container">
+<div class="card center-align">
+  <div class="card-content">
   <h4>
     Are you sure you want to delete your
-    <span class="blue-text">{{ object.year }} {{ object.make }}</span>?
+    <span class="blue-text">{{ object.year }} {{ object.make }} {{ object.model }}</span>?
   </h4>
   <form action="" method="post">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete" class="btn blue">
-    <a href="{% url 'details' car.id %}" class="red-text">Cancel</a>
+    <input type="submit" value="Yes - Delete" class="btn red" style="margin-right: 10px;">
+    <a href="{% url 'details' car.id %}" class="blue-text">Cancel</a>
   </form>
+</div>
 </div>
 
 {% endblock %}

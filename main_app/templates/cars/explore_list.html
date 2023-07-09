@@ -3,12 +3,18 @@
 <div class="row">
 {% for car in cars %}
 <div class="col s6">
-<div class="card flow-text hoverable">
+<div class="card flow-text">
     <div class="card-content">
-      <span class="card-title">{{ car.make }} {{ car.model }}</span>
+      <span class="card-title"><strong>{{ car.make }}</strong> {{ car.model }}</span>
       <p>Year: {{ car.year }}</p>
-      <p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
+      <p>Color: {{ car.color }}</p>
+      <!-- {% if car.color == 'White' %}
+      <p>Color: <span style="color: black;">{{ car.color }}</span></p>
+      {% else %}
+      <p>Color: <span style="color: {{car.color}};">{{ car.color }}</span></p>
+      {% endif %} -->
       <p>Mileage: {{ car.mileage|floatformat:"-3g" }}</p>
+      <!-- <p>Owned by:% url 'user_cars' car.user.id%{{ car.user.username }}</p> -->
       <p>Owned by: {{ car.user.username }}</p>
     </div>
 </div>

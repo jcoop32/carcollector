@@ -20,6 +20,12 @@ def cars_list(request):
     })
 
 @login_required
+def user_cars(request, user_id):
+    return render(request, 'cars/user_cars.html', {
+        'cars': Car.objects.filter(id=user_id),
+    })
+
+@login_required
 def explore_list(request):
     return render(request, 'cars/explore_list.html', {
         # removes logged in users cars from explore list

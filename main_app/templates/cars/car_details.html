@@ -2,16 +2,21 @@
 {% block content %}
 <h5><a href="{% url 'cars' %}">Back</a></h5>
 <h1>Details</h1>
-<div class="card">
-  <div class="card-content">
+<div class="card ">
+  <div class="card-content  ">
     <h3>{{ car.make }} {{ car.model }}</h3>
     <p>Year: {{ car.year }}</p>
-    <p>Color: <span style="font-weight: bold;">{{ car.color }}</span></p>
+    <p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
+    <!-- {% if car.color == 'White' %}
+      <p>Color: <span style="color: black;">{{ car.color }}</span></p>
+      {% else %}
+      <p>Color: <span style="color: {{color}};">{{ car.color }}</span></p>
+      {% endif %} -->
     <p>Mileage: {{ car.mileage|floatformat:"-3g" }}</p>
   </div>
-  <div class="card-action">
-    <a href="{% url 'car_update' car.id %}">Edit</a>
-    <a href="{% url 'car_delete' car.id %}">Delete</a>
+  <div class="card-action grey lighten-3">
+    <a href="{% url 'car_update' car.id %}" class="blue-text">Edit</a>
+    <a href="{% url 'car_delete' car.id %}" class="btn red white-text">Delete</a>
   </div>
 </div>
 
