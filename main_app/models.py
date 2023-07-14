@@ -8,6 +8,7 @@ class Car(models.Model):
     year = models.IntegerField('Year')
     color = models.CharField(max_length=200)
     mileage = models.IntegerField('Mileage')
+    img = models.CharField(max_length=250)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
