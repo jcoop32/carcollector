@@ -13,6 +13,6 @@ class Car(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.make} ({self.user.username})'
+        return f'{self.make} {self.model}, User:({self.user.username})'
     def get_absolute_url(self):
         return reverse('details', kwargs={'car_id': self.id})
