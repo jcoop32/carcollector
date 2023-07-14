@@ -40,14 +40,14 @@ def car_details(request, car_id):
     })
 class CarCreate(LoginRequiredMixin, CreateView):
     model = Car
-    fields = ['make', 'model', 'year', 'color', 'mileage']
+    fields = ['make', 'model', 'year', 'color', 'mileage', 'img']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
 class CarUpdate(LoginRequiredMixin, UpdateView):
     model = Car
-    fields = ['make', 'model', 'year', 'color', 'mileage']
+    fields = ['make', 'model', 'year', 'color', 'mileage', 'img']
 
 class CarDelete(LoginRequiredMixin, DeleteView):
     model = Car

@@ -2,9 +2,9 @@
 <h1>Explore  Cars</h1>
 <div class="row">
 {% for car in cars %}
-<div class="col s12 m6 black-text">
-  <div class="card hoverable">
-    <div class="card-image">
+<div class="col s12 m12 l6 black-text">
+  <div class="card large">
+    <div class="card-image" style="height: 500px;">
       <img src="{{car.img}}">
     </div>
     <div class="card-content">
@@ -13,7 +13,7 @@
       <p>Color: {{ car.color }}</p>
     </div>
     <div class="card-action">
-      <a href="#">{{ car.user.username }}</a>
+      <a href="#" class="blue-text">{{ car.user.username }}</a>
     </div>
   </div>
 </div>

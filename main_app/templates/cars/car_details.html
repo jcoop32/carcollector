@@ -2,9 +2,10 @@
 {% block content %}
 <h5><a href="{% url 'cars' %}">Back</a></h5>
 <h1>Details</h1>
-<div class="card ">
-  <div class="card-content  ">
+<div class="card container">
+  <div class="card-content ">
     <h3>{{ car.make }} {{ car.model }}</h3>
+    <img class="responsive-img" src="{{car.img}}" alt="cars" >
     <p>Year: {{ car.year }}</p>
     <p>Color: <span style="font-weight: bold">{{ car.color }}</span></p>
     <!-- {% if car.color == 'White' %}

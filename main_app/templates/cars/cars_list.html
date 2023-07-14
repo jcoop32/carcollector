@@ -8,18 +8,18 @@
 <div class="row">
 {% for car in cars %}
 <a href="{% url 'details' car.id %}" class="black-text">
-  <div class="col s12 m6 black-text">
-    <div class="card hoverable">
+  <div class="col s12 m12 l6 black-text">
+    <div class="card hoverable large">
       <div class="card-image">
         <img src="{{car.img}}">
       </div>
-      <div class="card-content">
+      <div class="card-content" style="height: 150px;">
         <p>{{ car.year }} {{ car.make }} {{ car.model }}</p>
         <p>Mileage: {{ car.mileage }}</p>
         <p>Color: {{ car.color }}</p>
       </div>
       <div class="card-action">
-        <a href="#">{{ car.user.username }}</a>
+        <a href="{% url 'details' car.id %}" class="blue-text">View</a>
       </div>
     </div>
   </div>
