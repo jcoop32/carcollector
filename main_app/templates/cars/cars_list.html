@@ -3,8 +3,7 @@
 <a
   class="btn-floating btn-large waves-effect waves-light grey darken-1"
   href="{% url 'car_create' %}"
-  ><i class="material-icons">add</i></a
->
+  ><i class="material-icons">add</i></a>
 <div class="row">
 {% for car in cars %}
 <a href="{% url 'details' car.id %}" class="black-text">

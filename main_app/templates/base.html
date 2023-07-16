@@ -54,7 +54,6 @@
             <li style="font-style: italic;" class="container right">Hello, {{ user.username }}</li>
             {% else %}
             <li><a href="{% url 'login' %}">Log In</a></li>
-            <!-- <li><a href="{% url 'signup' %}">Sign Up</a></li> -->
             {% endif %}
     </ul>
     <main class="container">{% block content %} {% endblock %}</main>

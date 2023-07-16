@@ -32,7 +32,6 @@ def explore_list(request):
         'cars': Car.objects.all().exclude(user=request.user),
     })
 
-
 @login_required
 def car_details(request, car_id):
     return render(request, 'cars/car_details.html', {
